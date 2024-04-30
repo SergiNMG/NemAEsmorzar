@@ -21,7 +21,8 @@
             "description": "A delightful starter to your meal.",
             "price": 6.99,
             "rating": 4.2,
-            "favorite": false
+            "favorite": false,
+            "placeId": 1
           },
           {
             "id": 3,
@@ -29,17 +30,20 @@
             "description": "Sweet treats to end your meal on a high note.",
             "price": 5.99,
             "rating": 4.5,
-            "favorite": false
+            "favorite": false,
+            "placeId": 1
           }
         ],
         "reviews": [
           {
+            "id": 1,
             "name": "John Doe",
             "date": "2024-04-27",
             "rating": 5,
             "description": "Amazing food and excellent service!"
           },
           {
+            "id": 2,
             "name": "Jane Smith",
             "date": "2024-04-25",
             "rating": 4,
@@ -68,7 +72,8 @@
             "description": "Delicious pastries to complement your coffee.",
             "price": 2.99,
             "rating": 4.4,
-            "favorite": false
+            "favorite": false,
+            "placeId": 2
           },
           {
             "id": 6,
@@ -76,7 +81,8 @@
             "description": "Refreshing fruit smoothies for a healthy boost.",
             "price": 4.49,
             "rating": 4.0,
-            "favorite": false
+            "favorite": false,
+            "placeId": 2
           }
         ],
         "reviews": [
