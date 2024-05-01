@@ -6,34 +6,6 @@
         "location": "City X",
         "description": "A cozy restaurant serving delicious meals.",
         "rating": 4.5,
-        "mainProduct": {
-          "id": 1,
-          "name": "Specialty Dish",
-          "description": "Our famous dish, prepared with fresh ingredients.",
-          "price": 12.99,
-          "rating": 4.8,
-          "favorite": false
-        },
-        "products": [
-          {
-            "id": 2,
-            "name": "Appetizer",
-            "description": "A delightful starter to your meal.",
-            "price": 6.99,
-            "rating": 4.2,
-            "favorite": false,
-            "placeId": 1
-          },
-          {
-            "id": 3,
-            "name": "Dessert",
-            "description": "Sweet treats to end your meal on a high note.",
-            "price": 5.99,
-            "rating": 4.5,
-            "favorite": false,
-            "placeId": 1
-          }
-        ],
         "reviews": [
           {
             "id": 1,
@@ -57,71 +29,20 @@
         "location": "Town Y",
         "description": "A trendy café offering a variety of beverages and snacks.",
         "rating": 4.2,
-        "mainProduct": {
-          "id": 4,
-          "name": "Signature Coffee",
-          "description": "Our freshly brewed coffee, made with premium beans.",
-          "price": 3.99,
-          "rating": 4.7,
-          "favorite": false
-        },
-        "products": [
-          {
-            "id": 5,
-            "name": "Pastry",
-            "description": "Delicious pastries to complement your coffee.",
-            "price": 2.99,
-            "rating": 4.4,
-            "favorite": false,
-            "placeId": 2
-          },
-          {
-            "id": 6,
-            "name": "Smoothie",
-            "description": "Refreshing fruit smoothies for a healthy boost.",
-            "price": 4.49,
-            "rating": 4.0,
-            "favorite": false,
-            "placeId": 2
-          }
-        ],
         "reviews": [
           {
+            "id": 3,
             "name": "Alice Johnson",
             "date": "2024-04-26",
             "rating": 4,
             "description": "Love the coffee, but wish there were more seating."
           },
           {
+            "id": 4,
             "name": "Michael Brown",
             "date": "2024-04-24",
             "rating": 4.5,
             "description": "Great selection of pastries!"
-          }
-        ]
-      }
-    ],
-    "user": [
-      {
-        "id": 1,
-        "nick": "root",
-        "password": "root",
-        "wishList": [
-          {
-            "id": 2,
-            "name": "Appetizer",
-            "description": "A delightful starter to your meal.",
-            "price": 6.99,
-            "rating": 4.2,
-            "favorite": false
-          },
-          {
-            "id": 3,
-            "name": "Dessert",
-            "description": "Sweet treats to end your meal on a high note.",
-            "price": 5.99,
-            "rating": 4.5,
-            "favorite": false
           }
         ]
       }

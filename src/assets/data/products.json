@@ -1,0 +1,58 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Appetizer",
+            "description": "A delightful starter to your meal.",
+            "price": 6.99,
+            "rating": 4.2,
+            "favorite": false,
+            "placeId": 1
+        },
+        {
+            "id": 2,
+            "name": "Dessert",
+            "description": "Sweet treats to end your meal on a high note.",
+            "price": 5.99,
+            "rating": 4.5,
+            "favorite": false,
+            "placeId": 1
+        },
+        {
+            "id": 3,
+            "name": "Specialty Dish",
+            "description": "Our famous dish, prepared with fresh ingredients.",
+            "price": 12.99,
+            "rating": 4.8,
+            "favorite": false,
+            "placeId": 1
+        },
+        {
+            "id": 4,
+            "name": "Signature Coffee",
+            "description": "Our freshly brewed coffee, made with premium beans.",
+            "price": 3.99,
+            "rating": 4.7,
+            "favorite": false,
+            "placeId": 2 
+        },
+        {
+            "id": 5,
+            "name": "Pastry",
+            "description": "Delicious pastries to complement your coffee.",
+            "price": 2.99,
+            "rating": 4.4,
+            "favorite": false,
+            "placeId": 2
+          },
+          {
+            "id": 6,
+            "name": "Smoothie",
+            "description": "Refreshing fruit smoothies for a healthy boost.",
+            "price": 4.49,
+            "rating": 4.0,
+            "favorite": false,
+            "placeId": 2
+          }
+    ]
+}

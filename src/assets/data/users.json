@@ -1,0 +1,10 @@
+{
+    "user": [
+        {
+          "id": 1,
+          "nick": "root",
+          "password": "root",
+          "wishList": [ 3 , 5 ]
+        }
+      ]
+}
