@@ -4,14 +4,11 @@ import { IReview } from "../IReview";
 import { IPlaceContract } from "../contract/IPlaceContract";
 
 export class Place implements IPlace {
-    id: number;
+    id: string;
     name: string;
     location: string;
     description: string;
     rating: number;
-    mainProduct: IProduct;
-    products: IProduct[];
-    reviews: IReview[];
 
     constructor(placeContract: IPlaceContract) {
         this.id = placeContract.id;
@@ -19,9 +16,6 @@ export class Place implements IPlace {
         this.location = placeContract.location;
         this.description = placeContract.description;
         this.rating = placeContract.rating;
-        this.mainProduct = placeContract.mainProduct;
-        this.products = placeContract.products;
-        this.reviews = placeContract.reviews;
     }
 
 

@@ -1,8 +1,9 @@
 export interface IProduct {
-    id: number,
+    id: string,
     name: string,
     description: string,
     price: number,
     rating: number,
-    favorite: boolean
+    favorite: boolean,
+    placeId: string
 }
