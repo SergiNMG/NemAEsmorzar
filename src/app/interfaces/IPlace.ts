@@ -1,10 +1,12 @@
-import { IProduct } from "./IProduct";
-import { IReview } from "./IReview";
+import { IProduct } from './IProduct';
+import { IReview } from './IReview';
 
 export interface IPlace {
-    id: string,
-    name: string,
-    location: string,
-    description: string,
-    rating: number
+  id: string;
+  name: string;
+  location: string;
+  description: string;
+  rating: number;
+  products: IProduct[];
+  reviews: IReview[];
 }
