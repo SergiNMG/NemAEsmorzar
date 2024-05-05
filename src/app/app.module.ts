@@ -9,27 +9,27 @@ import { ProductsComponent } from './modules/product/components/products/product
 import { ReviewsComponent } from './modules/place/components/reviews/reviews.component';
 import { environment } from './environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { StarsRatingComponent } from './shared/stars-rating/stars-rating.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainProductComponent,
-    ProductsComponent,
-    ReviewsComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HeaderComponent,
+    FooterComponent,
+    StarsRatingComponent,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}
