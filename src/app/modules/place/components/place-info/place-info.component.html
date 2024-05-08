@@ -4,13 +4,13 @@
     </div>
 
     <div class="col-12 col-md-7 d-flex flex-column p-4">
-        <h1> Name: {{place.name}} </h1>
+        <h1> {{place.name}} </h1>
         <h5><app-stars-rating [rating]="3"></app-stars-rating></h5>
-        <h5>4 Reviews</h5>
+        <h5> {{place.reviews.length}} Review(s) </h5>
         <hr class="my-5">
-        <h1> Location: {{place.location}} </h1>
+        <h1> {{place.location}} - Valencia </h1>
         <hr class="my-5">
-        <p>Place description</p>
+        <p> {{place.description}} </p>
         <hr class="mt-5 mb-4">
     </div>
 </article>
