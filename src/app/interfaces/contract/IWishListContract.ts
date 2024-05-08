@@ -1,4 +1,4 @@
 export interface IWishListContract {
-  id: string;
+  id?: string;
   userId: string;
 }

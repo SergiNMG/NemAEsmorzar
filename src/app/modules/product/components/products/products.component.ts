@@ -7,5 +7,5 @@ import { Product } from 'src/app/interfaces/models/Product';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
-  @Input() products!: Product[];
+  @Input() products: Product[] = {} as Product[];
 }

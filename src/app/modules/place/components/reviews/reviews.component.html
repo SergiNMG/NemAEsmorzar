@@ -1,12 +1,12 @@
 <h1 class="mb-5"> Reviews </h1>
-<article class="row">
+<article class="row" *ngFor="let review of reviews">
     <div class="col-12 col-md-4">
-        <h3>Review name</h3>
-        <p>Review date</p>
-        <p><app-stars-rating [rating]="4"></app-stars-rating></p>
+        <h3>{{review.name}}</h3>
+        <p>{{review.date}}</p>
+        <p><app-stars-rating [rating]="review.rating"></app-stars-rating></p>
     </div>
     <div class="col-12 col-md-8">
-        <p class="text-muted"> Review description </p>
+        <p class="text-muted"> {{review.description}} </p>
     </div>
 </article>
 

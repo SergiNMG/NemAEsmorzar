@@ -7,9 +7,10 @@ import { StarsRatingComponent } from 'src/app/shared/stars-rating/stars-rating.c
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { ProductModule } from '../product/product.module';
 import { PlaceRoutingModule } from './place-routing.module';
+import { AsideComponent } from './components/aside/aside.component';
 
 @NgModule({
-  declarations: [PlaceComponent, PlaceInfoComponent, ReviewsComponent],
+  declarations: [PlaceComponent, PlaceInfoComponent, ReviewsComponent, AsideComponent],
   imports: [
     CommonModule,
     FooterComponent,
