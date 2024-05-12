@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Place } from 'src/app/interfaces/models/Place';
 
 @Component({
@@ -8,4 +8,9 @@ import { Place } from 'src/app/interfaces/models/Place';
 })
 export class AsideComponent {
   @Input() places!: Place[];
+  @Output() selectPlaceEvent = new EventEmitter<Place>();
+
+  selectPlace(place: Place) {
+    this.selectPlaceEvent.emit(place);
+  }
 }

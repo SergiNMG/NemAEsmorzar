@@ -1,0 +1,16 @@
+<section class="d-flex flex-row flex-wrap justify-content-around my-5 gap-5">
+    <mat-card *ngFor="let product of productList" class="c-product">
+        <mat-card-header class="mb-auto">
+            <mat-card-title>{{product.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../../../assets/img/products/{{product.id}}.jpeg">
+        <mat-card-content>
+            <p>
+                {{product.description}}
+            </p>
+        </mat-card-content>
+        <mat-card-actions class="mt-auto">
+            <button mat-button>ADD TO WISHLIST</button>
+        </mat-card-actions>
+    </mat-card>
+</section>

@@ -1,16 +1,16 @@
 <article class="row">
-    <div class="col-12 col-md-8">
+    <!-- <div class="col-12 col-md-8">
         <img src="" class="w-100 align-items-center">
-    </div>
+    </div> -->
 
-    <div class="col-12 col-md-7 d-flex flex-column p-4">
-        <h1> {{place.name}} </h1>
-        <h5><app-stars-rating [rating]="3"></app-stars-rating></h5>
-        <h5> {{place.reviews.length}} Review(s) </h5>
+    <div class="d-flex flex-column p-4">
+        <h1 class="mat-headline-2 mb-3"><b>{{place.name}}</b></h1>
+        <h2><app-stars-rating [rating]="place.rating"></app-stars-rating></h2>
+        <h3 *ngIf="place.reviews"> {{place.reviews.length}} Review(s) </h3>
         <hr class="my-5">
-        <h1> {{place.location}} - Valencia </h1>
+        <h1 class="mat-headline-4 mb-3"> {{place.location}} - Valencia </h1>
         <hr class="my-5">
-        <p> {{place.description}} </p>
+        <p class="mat-subtitle-1 text-muted"> {{place.description}} </p>
         <hr class="mt-5 mb-4">
     </div>
 </article>

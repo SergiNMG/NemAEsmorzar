@@ -8,9 +8,17 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
 import { ProductModule } from '../product/product.module';
 import { PlaceRoutingModule } from './place-routing.module';
 import { AsideComponent } from './components/aside/aside.component';
+import { AllProductsComponent } from '../product/components/all-products/all-products.component';
+import { MainProductComponent } from '../product/components/main-product/main-product.component';
+import { ProductComponent } from '../product/product.component';
 
 @NgModule({
-  declarations: [PlaceComponent, PlaceInfoComponent, ReviewsComponent, AsideComponent],
+  declarations: [
+    PlaceComponent,
+    PlaceInfoComponent,
+    ReviewsComponent,
+    AsideComponent,
+  ],
   imports: [
     CommonModule,
     FooterComponent,

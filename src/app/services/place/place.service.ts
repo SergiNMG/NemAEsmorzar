@@ -12,6 +12,7 @@ import {
 })
 export class PlaceService {
   private _placesList: Place[] = [];
+  placeSelected: Place = {} as Place;
 
   private readonly placeSubject: BehaviorSubject<Place[]> = new BehaviorSubject<
     Place[]
@@ -43,6 +44,24 @@ export class PlaceService {
         this.updatePlaceSubject();
       });
   }
+
+  getProductsFromAPlaceList(idPlace: string) {
+    this.places$.pipe(
+      map((placeList) => {
+        placeList.filter((place) => place.id === idPlace);
+      })
+    );
+  }
+
+  // getPlaceById(id: string): Observable<Place | void> {
+  //   return this.places$.pipe(
+  //     map((placeList) => {
+  //       placeList.find((place) => {
+  //         place.id === id;
+  //       });
+  //     })
+  //   );
+  // }
 
   private updatePlaceSubject() {
     this.placeSubject.next(this._placesList);

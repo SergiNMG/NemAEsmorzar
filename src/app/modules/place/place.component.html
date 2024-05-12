@@ -1,24 +1,20 @@
 <section *ngIf="placeSelected" class="container">
     <article class="row">
         <aside class="col-12 col-md-3">
-            <app-aside [places]="placeList"></app-aside>
+            <app-aside [places]="placeList" (selectPlaceEvent)="selectPlace($event)"></app-aside>
         </aside>
 
         <div *ngIf="placeSelected.products" class="col-12 col-md-9">
             <div class="row">
                 <app-place-info [place]="placeSelected">
                 </app-place-info>
-                <!-- product -->
                 <app-main-product [product]="placeSelected.products[0]"></app-main-product>
-                <!-- products -->
                 <app-products [products]="placeSelected.products"></app-products>
             </div>
 
-            <div class="row p-4">
+            <div class="row p-4" *ngIf="placeSelected.reviews">
                 <app-reviews [reviews]="placeSelected.reviews"></app-reviews>
-                <!-- reviews -->
             </div>
         </div>
     </article>
 </section>
-<app-footer />

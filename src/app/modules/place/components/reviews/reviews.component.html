@@ -1,13 +1,16 @@
-<h1 class="mb-5"> Reviews </h1>
+<h1 class="mb-5 mat-headline-4"> Reviews</h1>
 <article class="row" *ngFor="let review of reviews">
-    <div class="col-12 col-md-4">
-        <h3>{{review.name}}</h3>
-        <p>{{review.date}}</p>
-        <p><app-stars-rating [rating]="review.rating"></app-stars-rating></p>
-    </div>
-    <div class="col-12 col-md-8">
-        <p class="text-muted"> {{review.description}} </p>
-    </div>
+    <ng-container *ngIf="review">
+        <div class="col-12 col-md-2">
+            <h3>{{review.name}}</h3>
+            <p>{{review.date}}</p>
+            <p><app-stars-rating [rating]="review.rating"></app-stars-rating></p>
+        </div>
+        <div class="col-12 col-md-10">
+            <p class="text-muted"> {{review.description}} </p>
+        </div>
+    </ng-container>
+    <hr>
 </article>
 
 

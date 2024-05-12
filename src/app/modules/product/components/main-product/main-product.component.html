@@ -1,20 +1,20 @@
-<article class="row border-top">
-    <div class="col-12 col-md-5 d-flex align-items-center mt-1">
+<article class="row border-top" *ngIf="product">
+    <div class="col-12 col-md-5 d-flex align-items-center my-1 justify-content-center">
         <img src="../../../../../assets/img/products/{{product.id}}.jpeg" class="w-100 align-items-center rounded">
     </div>
 
-    <div class="col-12 col-md-7 d-flex flex-column p-4">
+    <div class="col-12 col-md-7 d-flex flex-column p-3 justify-content-center">
         <div class="d-flex flex-row justify-content-between align-items-center">
-            <h1> {{product.name}} </h1>
+            <h1 class="mb-0"> {{product.name}} </h1>
             <!-- <button (click)="addToWishList(product.favorite)" class="btn btn-lg border-0">
                     <i class="bi" [ngClass]="product.favorite? 'bi-heart-fill text-danger': 'bi-heart'"></i>
                 </button> -->
         </div>
         <h5><app-stars-rating [rating]="4"></app-stars-rating></h5>
-        <hr class="my-5">
-        <h1> {{product.price}} </h1>
-        <hr class="my-5">
+        <hr class="my-4">
+        <h1> {{product.price}}€</h1>
+        <hr class="my-4">
         <p> {{product.description}} </p>
-        <hr class="mt-5 mb-4">
+        <hr class="mt-4 mb-4">
     </div>
 </article>

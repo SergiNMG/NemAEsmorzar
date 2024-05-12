@@ -11,6 +11,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { StarsRatingComponent } from './shared/stars-rating/stars-rating.component';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,8 @@ import { StarsRatingComponent } from './shared/stars-rating/stars-rating.compone
     HeaderComponent,
     FooterComponent,
     StarsRatingComponent,
+    RouterLink,
+    RouterLinkActive,
   ],
   providers: [],
   bootstrap: [AppComponent],
