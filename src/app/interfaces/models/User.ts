@@ -3,12 +3,12 @@ import { IUserContract } from '../contract/IUserContract';
 
 export class User implements IUser {
   uid?: string;
-  name: string;
+  email: string;
   password: string;
 
   constructor(userContract: IUserContract) {
     this.uid = userContract.uid;
-    this.name = userContract.name;
+    this.email = userContract.email;
     this.password = userContract.password;
   }
 }

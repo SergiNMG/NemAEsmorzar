@@ -1,0 +1,26 @@
+<section class="d-flex flex-wrap flex-column align-items-center justify-content-center h-75">
+    <article class="p-5 border rounded w-auto">
+        <form class="d-flex flex-wrap flex-column align-items-center gap-3" [formGroup]="getUserForm"
+            (ngSubmit)="submitUser()">
+            <h2 class="me-auto">Log In:</h2>
+            <mat-form-field class="w-100">
+                <mat-label>Introduce tu mail</mat-label>
+                <input matInput placeholder="mail@example.com" required formControlName="email">
+                <mat-error *ngIf="getUserForm.get('email')?.invalid">{{getMailErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-100">
+                <mat-label>Introduce tu contraseña</mat-label>
+                <input matInput [type]="hide? 'password' : 'text'" required formControlName="password">
+                <mat-error *ngIf="getUserForm.get('password')?.invalid">{{getPasswordErrorMessage()}}</mat-error>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.arialabel]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <div class="d-flex flex-row flex-wrap gap-1">
+                <button mat-raised-button color="primary" (click)="submitForm()">Iniciar Sesión</button>
+                <button mat-stroked-button color="primary" (click)="navigateTo('/user/signin')"> Crear cuenta </button>
+            </div>
+        </form>
+    </article>
+</section>

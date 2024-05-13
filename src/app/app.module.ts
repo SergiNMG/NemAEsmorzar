@@ -12,6 +12,9 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { StarsRatingComponent } from './shared/stars-rating/stars-rating.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { Auth, getAuth, provideAuth } from '@angular/fire/auth';
+import { FirebaseAppModule } from '@angular/fire/app';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,13 +23,16 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    provideAuth(() => getAuth()),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    FirebaseAppModule,
     HeaderComponent,
     FooterComponent,
     StarsRatingComponent,
     RouterLink,
     RouterLinkActive,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
