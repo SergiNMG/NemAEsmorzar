@@ -11,9 +11,10 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
+import { WishListComponent } from './wish-list/wish-list.component';
 
 @NgModule({
-  declarations: [UserComponent, LoginComponent, SigninComponent],
+  declarations: [UserComponent, LoginComponent, SigninComponent, WishListComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,
