@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, forkJoin, map, switchMap } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import { Place } from 'src/app/interfaces/models/Place';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
-  AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 
 @Injectable({
@@ -53,6 +52,18 @@ export class PlaceService {
     );
   }
 
+  addPlace(placeData: any) {
+    return this.nemAEsmorzarDB.collection('places').add(placeData);
+  }
+
+  deletePlace(placeId: string) {
+    return this.nemAEsmorzarDB.collection('places').doc(placeId).delete();
+  }
+
+  private updatePlaceSubject() {
+    this.placeSubject.next(this._placesList);
+  }
+
   // getPlaceById(id: string): Observable<Place | void> {
   //   return this.places$.pipe(
   //     map((placeList) => {
@@ -62,8 +73,4 @@ export class PlaceService {
   //     })
   //   );
   // }
-
-  private updatePlaceSubject() {
-    this.placeSubject.next(this._placesList);
-  }
 }

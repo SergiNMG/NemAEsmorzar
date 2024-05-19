@@ -12,9 +12,17 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { WishListComponent } from './wish-list/wish-list.component';
+import { HeaderComponent } from 'src/app/shared/header/header.component';
+import { FooterComponent } from 'src/app/shared/footer/footer.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-  declarations: [UserComponent, LoginComponent, SigninComponent, WishListComponent],
+  declarations: [
+    UserComponent,
+    LoginComponent,
+    SigninComponent,
+    WishListComponent,
+  ],
   imports: [
     CommonModule,
     MatFormFieldModule,
@@ -26,6 +34,10 @@ import { WishListComponent } from './wish-list/wish-list.component';
     ReactiveFormsModule,
     AngularFireAuthModule,
     AngularFireModule,
+    HeaderComponent,
+    FooterComponent,
+    MatButtonModule,
+    MatCardModule,
   ],
   providers: [],
 })

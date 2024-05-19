@@ -11,14 +11,13 @@ const routes: Routes = [
   {
     path: '',
     children: [
-      { path: '', component: UserComponent },
+      {
+        path: '',
+        component: UserComponent,
+        ...canActivate(() => redirectUnauthorizedTo(['/user/login'])),
+      },
       { path: 'login', component: LoginComponent },
       { path: 'signin', component: SigninComponent },
-      {
-        path: 'wishList',
-        component: WishListComponent,
-        ...canActivate(() => redirectUnauthorizedTo(['register'])),
-      },
       { path: '**', redirectTo: '', pathMatch: 'full' },
     ],
   },

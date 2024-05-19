@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Place } from 'src/app/interfaces/models/Place';
 import { Product } from 'src/app/interfaces/models/Product';
 import { PlaceService } from 'src/app/services/place/place.service';
@@ -10,4 +10,9 @@ import { PlaceService } from 'src/app/services/place/place.service';
 })
 export class AllProductsComponent {
   @Input() productList!: Product[];
+  @Output() addProductToWishListEvent = new EventEmitter<Product>();
+
+  addProductToWishList(product: Product) {
+    this.addProductToWishListEvent.emit(product);
+  }
 }

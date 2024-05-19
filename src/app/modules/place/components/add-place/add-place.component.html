@@ -1,0 +1,42 @@
+<section class="d-flex flex-wrap flex-column align-items-center justify-content-center">
+    <article class="p-5 border rounded my-5">
+        <form class="d-flex flex-wrap flex-column align-items-center gap-3" [formGroup]="addPlaceForm"
+            (ngSubmit)="submitPlace()">
+            <h2 class="me-auto">Añadir lugar:</h2>
+            <mat-form-field class="w-100">
+                <mat-label>Nombre del lugar</mat-label>
+                <input matInput placeholder="Nombre del lugar" required formControlName="name">
+                <mat-error *ngIf="addPlaceForm.get('name')?.hasError('required')">Debes introducir un nombre para el
+                    lugar</mat-error>
+                <mat-error *ngIf="addPlaceForm.get('name')?.hasError('maxlength')">El nombre del lugar no puede tener
+                    más de 30 caracteres</mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-100">
+                <mat-label>Ubicación</mat-label>
+                <input matInput placeholder="Ubicación" required formControlName="location">
+                <mat-error *ngIf="addPlaceForm.get('location')?.hasError('required')">Debes introducir la ubicación del
+                    lugar</mat-error>
+                <mat-error *ngIf="addPlaceForm.get('location')?.hasError('maxlength')">La ubicación del lugar no puede
+                    tener más de 30 caracteres</mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-100">
+                <mat-label>Descripción</mat-label>
+                <textarea matInput placeholder="Descripción" required formControlName="description"></textarea>
+                <mat-error *ngIf="addPlaceForm.get('description')?.hasError('required')">Debes introducir una
+                    descripción para el lugar</mat-error>
+                <mat-error *ngIf="addPlaceForm.get('description')?.hasError('maxlength')">La descripción del lugar no
+                    puede tener más de 300 caracteres</mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-100">
+                <mat-label>Rating</mat-label>
+                <input matInput placeholder="Rating" required formControlName="rating">
+                <mat-error *ngIf="addPlaceForm.get('rating')?.hasError('required')">Debes introducir un rating para el
+                    lugar</mat-error>
+                <mat-error *ngIf="addPlaceForm.get('rating')?.hasError('max')">El rating no puede ser mayor a
+                    5</mat-error>
+            </mat-form-field>
+            <button mat-stroked-button color="primary" (click)="submitForm()" [disabled]="!addPlaceForm.valid"
+                type="submit">Añadir lugar</button>
+        </form>
+    </article>
+</section>

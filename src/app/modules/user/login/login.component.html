@@ -19,8 +19,9 @@
             </mat-form-field>
             <div class="d-flex flex-row flex-wrap gap-1">
                 <button mat-raised-button color="primary" (click)="submitForm()">Iniciar Sesión</button>
-                <button mat-stroked-button color="primary" (click)="navigateTo('/user/signin')"> Crear cuenta </button>
+                <button mat-stroked-button color="primary" (click)="logOut()"> Cerrar Sesión </button>
             </div>
         </form>
     </article>
+    <p class="my-3">¿No tienes cuenta?<a routerLink="/user/signin">Pincha aquí</a></p>
 </section>

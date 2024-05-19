@@ -3,6 +3,8 @@ import { Place } from 'src/app/interfaces/models/Place';
 import { Product } from 'src/app/interfaces/models/Product';
 import { PlaceService } from 'src/app/services/place/place.service';
 import { ProductService } from 'src/app/services/product/product.service';
+import { UserService } from 'src/app/services/user/user.service';
+import { WishListService } from 'src/app/services/wishList/wish-list.service';
 
 @Component({
   selector: 'app-product',
@@ -14,7 +16,11 @@ export class ProductComponent implements OnInit {
   placeList: Place[] = {} as Place[];
   place: Place | undefined;
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private userService: UserService,
+    private wishListService: WishListService
+  ) {}
 
   ngOnInit() {
     this.getProducts();
@@ -28,6 +34,17 @@ export class ProductComponent implements OnInit {
       error: (error) => {
         console.error('Error while getting products', error);
       },
+    });
+  }
+
+  addProductToWishList(product: Product) {
+    console.log(product);
+    this.userService.currentUser$.subscribe((user) => {
+      if (user) {
+        this.wishListService.addProductToWishList(product);
+      } else {
+        alert('Para realizar esta acción debe iniciar sesión');
+      }
     });
   }
 }

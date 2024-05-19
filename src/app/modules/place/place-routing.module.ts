@@ -3,11 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { PlaceComponent } from './place.component';
 import { AllProductsComponent } from '../product/components/all-products/all-products.component';
 import { ProductComponent } from '../product/product.component';
+import { AddPlaceComponent } from './components/add-place/add-place.component';
+import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 const routes: Routes = [
   {
     path: '',
-    children: [{ path: '', component: PlaceComponent }],
+    children: [
+      { path: '', component: PlaceComponent },
+      {
+        path: 'add',
+        component: AddPlaceComponent,
+        ...canActivate(() => redirectUnauthorizedTo(['/user/login'])),
+      },
+    ],
   },
   {
     path: 'products',

@@ -8,6 +8,7 @@ import { Place } from 'src/app/interfaces/models/Place';
 })
 export class AsideComponent {
   @Input() places!: Place[];
+  @Input() selectedPlace!: Place;
   @Output() selectPlaceEvent = new EventEmitter<Place>();
 
   selectPlace(place: Place) {

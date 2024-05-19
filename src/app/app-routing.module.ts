@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'places', pathMatch: 'full' },
   {
     path: 'places',
     loadChildren: () =>
@@ -24,7 +23,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/about/about.module').then((m) => m.AboutModule),
   },
-  { path: '**', redirectTo: 'places' },
+  { path: '**', redirectTo: 'places', pathMatch: 'full' },
 ];
 
 @NgModule({

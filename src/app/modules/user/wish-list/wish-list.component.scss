@@ -1,0 +1,8 @@
+.c-product {
+  max-width: 300px;
+}
+
+.c-product:hover {
+  transform: scale(1.05);
+  transition: transform 0.4s ease;
+}

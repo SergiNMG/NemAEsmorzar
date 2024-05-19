@@ -1,7 +1,8 @@
 <section *ngIf="placeSelected" class="container">
     <article class="row">
         <aside class="col-12 col-md-3">
-            <app-aside [places]="placeList" (selectPlaceEvent)="selectPlace($event)"></app-aside>
+            <app-aside [places]="placeList" [selectedPlace]="placeSelected"
+                (selectPlaceEvent)="selectPlace($event)"></app-aside>
         </aside>
 
         <div *ngIf="placeSelected.products" class="col-12 col-md-9">
@@ -18,3 +19,4 @@
         </div>
     </article>
 </section>
+<app-footer></app-footer>

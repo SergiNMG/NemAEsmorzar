@@ -7,6 +7,7 @@ import { Review } from 'src/app/interfaces/models/Review';
 import { PlaceService } from 'src/app/services/place/place.service';
 import { ProductService } from 'src/app/services/product/product.service';
 import { ReviewService } from 'src/app/services/review/review.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-place',
@@ -23,7 +24,8 @@ export class PlaceComponent implements OnInit {
   constructor(
     private placeService: PlaceService,
     private productService: ProductService,
-    private reviewService: ReviewService
+    private reviewService: ReviewService,
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {

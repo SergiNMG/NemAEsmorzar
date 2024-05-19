@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user/user.service';
@@ -8,7 +8,7 @@ import { UserService } from 'src/app/services/user/user.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   getUserForm!: FormGroup;
   hide: boolean = true;
   formValue: any;
@@ -52,9 +52,23 @@ export class LoginComponent {
     if (this.getUserForm.valid) {
       this.userService
         .login(this.getUserForm.value)
-        .then((response) => console.log(response))
+        .then((response) => {
+          console.log(response);
+          alert('Sesion iniciada');
+          this.navigateTo('/user');
+        })
         .catch((error) => console.error(error));
     }
+  }
+
+  logOut() {
+    this.userService
+      .logout()
+      .then(() => {
+        this.navigateTo('/places');
+        alert('Sesion cerrada');
+      })
+      .catch((error) => console.error(error));
   }
 
   navigateTo(route: string) {
