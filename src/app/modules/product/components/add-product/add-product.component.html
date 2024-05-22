@@ -1,0 +1,42 @@
+<section class="d-flex flex-wrap flex-column align-items-center justify-content-center">
+    <article class="p-5 rounded my-5 c-addProduct">
+        <form class="d-flex flex-wrap flex-column align-items-center gap-3" [formGroup]="addProductForm"
+            (ngSubmit)="submitProduct()">
+            <h2 class="me-auto">Añadir Producto:</h2>
+            <mat-form-field class="w-100">
+                <mat-label>Nombre del producto</mat-label>
+                <input matInput placeholder="Nombre del producto" required formControlName="name">
+                <mat-error *ngIf="addProductForm.get('name')?.hasError('required')">Campo necesario</mat-error>
+                <mat-error *ngIf="addProductForm.get('name')?.hasError('maxlength')">Max. 30 carácteres</mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-100">
+                <mat-label>Precio</mat-label>
+                <input matInput placeholder="Precio" required formControlName="price">
+                <mat-error *ngIf="addProductForm.get('description')?.hasError('required')">Campo necesario</mat-error>
+                <mat-error *ngIf="addProductForm.get('description')?.hasError('maxlength')">Max. 100€
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-100">
+                <mat-label>Descripción</mat-label>
+                <textarea matInput placeholder="Descripcion" required formControlName="description"></textarea>
+                <mat-error *ngIf="addProductForm.get('price')?.hasError('required')">Campo necesario</mat-error>
+                <mat-error *ngIf="addProductForm.get('price')?.hasError('max')">Max. 200 carácteres</mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-100">
+                <mat-label>Rating</mat-label>
+                <input matInput placeholder="Rating" required formControlName="rating">
+                <mat-error *ngIf="addProductForm.get('rating')?.hasError('required')">Campo necesario</mat-error>
+                <mat-error *ngIf="addProductForm.get('rating')?.hasError('max')">Valor max. 5</mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-100">
+                <mat-label>Select a place</mat-label>
+                <mat-select required formControlName="placeId">
+                    <mat-option *ngFor="let place of placeList" [value]="place.id">{{place.name}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="addProductForm.get('placeId')?.hasError('required')">Campo necesario</mat-error>
+            </mat-form-field>
+            <button mat-stroked-button color="primary" (click)="submitForm()" [disabled]="!addProductForm.valid"
+                type="submit">Añadir Producto</button>
+        </form>
+    </article>
+</section>

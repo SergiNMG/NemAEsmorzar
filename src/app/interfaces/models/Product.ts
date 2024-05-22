@@ -7,7 +7,6 @@ export class Product implements IProduct {
   description: string;
   price: number;
   rating: number;
-  favorite: boolean;
   placeId: string;
 
   constructor(productContract: IProductContract) {
@@ -16,7 +15,6 @@ export class Product implements IProduct {
     this.description = productContract.description;
     this.price = productContract.price;
     this.rating = productContract.rating;
-    this.favorite = productContract.favorite;
     this.placeId = productContract.placeId;
   }
 }

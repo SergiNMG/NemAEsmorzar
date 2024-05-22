@@ -7,8 +7,13 @@ import { StarsRatingComponent } from 'src/app/shared/stars-rating/stars-rating.c
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { AllProductsComponent } from './components/all-products/all-products.component';
-import { ProductRoutingModule } from './product-routing.module';
 import { FooterComponent } from 'src/app/shared/footer/footer.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,12 +21,20 @@ import { FooterComponent } from 'src/app/shared/footer/footer.component';
     MainProductComponent,
     ProductsComponent,
     AllProductsComponent,
+    AddProductComponent,
   ],
   imports: [
     CommonModule,
     StarsRatingComponent,
     MatButtonModule,
     MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
     FooterComponent,
   ],
   exports: [ProductsComponent, MainProductComponent],

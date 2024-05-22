@@ -4,6 +4,5 @@ export interface IProduct {
   description: string;
   price: number;
   rating: number;
-  favorite: boolean;
   placeId: string;
 }

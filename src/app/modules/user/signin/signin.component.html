@@ -1,5 +1,5 @@
 <section class="d-flex flex-wrap flex-column align-items-center justify-content-center h-75">
-    <article class="p-5 border rounded w-auto">
+    <article class="p-5 rounded w-auto c-signin">
         <form class="d-flex flex-wrap flex-column align-items-center gap-3" [formGroup]="addUserForm"
             (ngSubmit)="submitUser()">
             <h2 class="me-auto">Sign In:</h2>
@@ -17,7 +17,7 @@
                     <mat-icon>{{hide? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
             </mat-form-field>
-            <button mat-stroked-button color="primary" (click)="submitForm()">Crear cuenta</button>
+            <button mat-raised-button color="primary" (click)="submitForm()">Crear cuenta</button>
         </form>
     </article>
 </section>

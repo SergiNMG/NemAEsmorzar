@@ -5,6 +5,7 @@ import { AllProductsComponent } from '../product/components/all-products/all-pro
 import { ProductComponent } from '../product/product.component';
 import { AddPlaceComponent } from './components/add-place/add-place.component';
 import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+import { AddProductComponent } from '../product/components/add-product/add-product.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,10 @@ const routes: Routes = [
   },
   {
     path: 'products',
-    children: [{ path: '', component: ProductComponent }],
+    children: [
+      { path: '', component: ProductComponent },
+      { path: 'add', component: AddProductComponent },
+    ],
   },
   {
     path: '**',

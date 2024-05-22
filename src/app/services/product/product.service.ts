@@ -49,18 +49,26 @@ export class ProductService {
       });
   }
 
-  deleteProduct(product: Product) {
-    this._productList = this._productList.filter(
-      (productContract) => product.id !== productContract.id
-    );
+  addProduct(productData: any) {
+    return this.nemAEsmorzarDB.collection('products').add(productData);
   }
 
-  addProduct(newProduct: Product) {
-    this._productList.push(newProduct);
-    this.updateProductSubject();
+  deleteProduct(productId: string) {
+    this.nemAEsmorzarDB.collection('products').doc(productId).delete();
   }
 
   private updateProductSubject() {
     this.productSubject.next(this._productList);
   }
 }
+
+// deleteProduct(product: Product) {
+//   this._productList = this._productList.filter(
+//     (productContract) => product.id !== productContract.id
+//   );
+// }
+
+// addProduct(newProduct: Product) {
+//   this._productList.push(newProduct);
+//   this.updateProductSubject();
+// }
