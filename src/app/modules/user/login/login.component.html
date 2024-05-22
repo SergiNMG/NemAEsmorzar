@@ -1,4 +1,4 @@
-<section class="d-flex flex-wrap flex-column align-items-center justify-content-center h-75">
+<section *ngIf="!currentUser" class="d-flex flex-wrap flex-column align-items-center justify-content-center h-75">
     <article class="p-5 rounded w-auto c-login">
         <form class="d-flex flex-wrap flex-column align-items-center gap-3" [formGroup]="getUserForm"
             (ngSubmit)="submitUser()">
@@ -22,6 +22,15 @@
                 <button mat-stroked-button color="primary" (click)="logOut()"> Cerrar Sesión </button>
             </div>
         </form>
+    </article>
+    <p class="my-3">¿No tienes cuenta? <a routerLink="/user/signin">Pincha aquí</a></p>
+</section>
+
+<section *ngIf="currentUser" class="d-flex flex-wrap flex-column align-items-center justify-content-center h-75">
+    <article class="p-5 rounded w-auto c-login d-flex flex-column align-items-center">
+        <h1>¡Bienvenido!</h1>
+        <h2>{{currentUser.email}}</h2>
+        <button mat-stroked-button color="primary" (click)="logOut()"> Cerrar Sesión </button>
     </article>
     <p class="my-3">¿No tienes cuenta? <a routerLink="/user/signin">Pincha aquí</a></p>
 </section>

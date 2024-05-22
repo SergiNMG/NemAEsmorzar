@@ -14,6 +14,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { AddReviewComponent } from './components/add-review/add-review.component';
+import { MatSelectModule } from '@angular/material/select';
+import { ManagePlaceComponent } from './components/manage-place/manage-place.component';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,8 @@ import { MatButtonModule } from '@angular/material/button';
     ReviewsComponent,
     AsideComponent,
     AddPlaceComponent,
+    AddReviewComponent,
+    ManagePlaceComponent,
   ],
   imports: [
     CommonModule,
@@ -33,8 +39,11 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatInputModule,
     MatButtonModule,
+    MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterLink,
+    RouterLinkActive,
   ],
 })
 export class PlaceModule {}

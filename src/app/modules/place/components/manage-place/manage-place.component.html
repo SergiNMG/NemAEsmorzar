@@ -1,0 +1,70 @@
+<section class="d-flex flex-wrap flex-column ms-auto me-auto align-items-center p-3 w-50 rounded my-3 l-buttons">
+    <h2 class="text-center">Crear: </h2>
+    <div class="d-flex flex-wrap gap-3">
+        <button mat-raised-button routerLink="/places/add">Place</button>
+        <button mat-raised-button routerLink="/places/products/add">Product</button>
+        <button mat-raised-button routerLink="/places/reviews/add">Review</button>
+    </div>
+</section>
+<h2 class="text-center">Places</h2>
+<table class="table w-75 ms-auto me-auto">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let place of placeList">
+            <th scope="row">{{place.id}}</th>
+            <td>{{place.name}}</td>
+            <td><button mat-stroked-button color="primary">Edit</button></td>
+            <td><button mat-stroked-button color="warn" *ngIf="place.id" (click)="deletePlace(place.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<h2 class="text-center">Products</h2>
+<table class="table w-75 ms-auto me-auto">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productList">
+            <th scope="row">{{product.id}}</th>
+            <td>{{product.name}}</td>
+            <td><button mat-stroked-button color="primary">Edit</button></td>
+            <td><button mat-stroked-button color="warn" *ngIf="product.id"
+                    (click)="deleteProduct(product.id)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<h2 class="text-center">Reviews</h2>
+<table class="table w-75 ms-auto me-auto">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Place Id</th>
+            <th scope="col">Name</th>
+            <th scope="col"> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let review of reviewList">
+            <th scope="row">{{review.id}}</th>
+            <td>{{review.placeId}}</td>
+            <td>{{review.name}}</td>
+            <td><button mat-stroked-button color="warn" *ngIf="review.id"
+                    (click)="deleteReview(review.id)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>

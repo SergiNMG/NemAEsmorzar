@@ -1,5 +1,5 @@
 export interface IUserContract {
   uid?: string;
-  email: string;
-  password: string;
+  email: string | null;
+  displayName?: string | null;
 }

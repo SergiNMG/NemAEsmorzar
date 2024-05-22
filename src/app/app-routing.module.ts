@@ -8,11 +8,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/place/place.module').then((m) => m.PlaceModule),
   },
-  // {
-  //   path: 'products',
-  //   loadChildren: () =>
-  //     import('./modules/product/product.module').then((m) => m.ProductModule),
-  // },
   {
     path: 'user',
     loadChildren: () =>

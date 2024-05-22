@@ -54,11 +54,7 @@ export class ProductService {
   }
 
   deleteProduct(productId: string) {
-    this.nemAEsmorzarDB.collection('products').doc(productId).delete();
-  }
-
-  private updateProductSubject() {
-    this.productSubject.next(this._productList);
+    return this.nemAEsmorzarDB.collection('products').doc(productId).delete();
   }
 }
 

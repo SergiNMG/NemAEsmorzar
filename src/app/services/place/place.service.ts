@@ -56,6 +56,10 @@ export class PlaceService {
     return this.nemAEsmorzarDB.collection('places').add(placeData);
   }
 
+  updatePlace(place: Place) {
+    return this.nemAEsmorzarDB.collection('places').doc(place.id).update(place);
+  }
+
   deletePlace(placeId: string) {
     return this.nemAEsmorzarDB.collection('places').doc(placeId).delete();
   }

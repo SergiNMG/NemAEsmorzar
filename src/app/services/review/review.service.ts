@@ -46,4 +46,12 @@ export class ReviewService {
         },
       });
   }
+
+  addReview(placeData: any) {
+    return this.nemAEsmorzarDB.collection('reviews').add(placeData);
+  }
+
+  deleteReview(reviewId: string) {
+    return this.nemAEsmorzarDB.collection('reviews').doc(reviewId).delete();
+  }
 }

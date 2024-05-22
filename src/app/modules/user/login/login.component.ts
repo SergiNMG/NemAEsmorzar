@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/app/interfaces/models/User';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class LoginComponent implements OnInit {
   getUserForm!: FormGroup;
   hide: boolean = true;
   formValue: any;
+  currentUser: User | null = {} as User;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -20,9 +22,18 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.getUser();
     this.getUserForm = this.formBuilder.group({
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required, Validators.minLength(6)]],
+    });
+  }
+
+  getUser() {
+    this.userService.currentUser$.subscribe({
+      next: (user) => {
+        this.currentUser = user;
+      },
     });
   }
 
